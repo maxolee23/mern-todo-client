@@ -1,58 +1,51 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+// import {useHistory} from 'react-router-dom';
+import TodoDetails from './TodoDetails';
+
 
 const Todo = ({todo, getTodos}) => {
-    // console.log(todo)
-    const [checked, setChecked] = useState(todo.completed);
-    const [priority, setPriority] = useState(todo.priority);
-
-    // console.log(todo)
+    const [showEdit, toggleShowEdit] = useState(false);
+    // const history = useHistory("/");
 
     const deleteBtn = async () => {
-        await axios.delete(`http://localhost:4000/${todo._id}`);
-        await getTodos();
-    }
-
-
-    const editBtn = async (e) => {
-       
-        const editData = {
-            title: todo.title,
-            completed: checked,
-            priority: priority,
-            user: todo.user
-        };
-        // console.log(editData);
-        try {
-            await axios.put(`http://localhost:4000/${todo._id}`, editData);
-            e.preventDefault();
-            await getTodos();
+        // console.log("clicked delete")
+        try{
+            await axios.delete(`http://localhost:4000/${todo._id}`);
+            // history.push("/")
             
-        } catch (error){
+            await getTodos();
+        } catch (error) {
             console.log(error)
         }
         
-
-        // console.log(checked);
-        // console.log(priority)
-
     }
     
     return (
         <div>
             <p>{todo.title}</p>
-            <input type="checkbox" value={!todo.completed} onChange={(e) => setChecked(e.target.value)} />
+            {todo.completed === true &&<p>Completed</p>}
+            {todo.completed === false && <p>Not Completed</p>}
 
-        
-            <select onChange={(e) => setPriority(e.target.value)}>
-                <option value={todo.priority} >{todo.priority}</option>
-                { todo.priority !== "High" && <option value="High">High</option> }
-                { todo.priority !== "Medium" && <option value="Medium">Medium</option>}
-                { todo.priority !== "Low" && <option value="Low">Low</option> }
-            </select>
-
-            <button onClick={editBtn}>Edit</button>
+            {/* <input type="checkbox" value={!todo.completed} onChange={(e) => setChecked(e.target.value)} /> */}
+            <button onClick={(e) => toggleShowEdit(!showEdit)}>Edit</button>
             <button onClick={deleteBtn}>Delete</button>
+
+            <div>
+                {
+                    showEdit === true && 
+                    <TodoDetails 
+                    todo={todo} 
+                    getTodos={getTodos} 
+                    // completedArr={{
+                    //     "Completed": true,
+                    //     "Not Completed": false
+                    // } }
+                    priorityArr={["High", "Medium", "Low"]}
+                    />
+                }
+            </div>
+            
         </div>
     )
 }

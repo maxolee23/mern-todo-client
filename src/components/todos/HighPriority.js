@@ -4,7 +4,7 @@ import Todo from './Todo'
 const HighPriority = ({data, getTodos}) => {
     // console.log(data);
     const highPriority = data.filter((x) => x.priority === "High");
-    // console.log(highPriority)
+    // console.log(highPriority.map((x) => x._id))
     return (
         // <h1>Hello</h1>
         <div>

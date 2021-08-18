@@ -1,5 +1,4 @@
 import React from 'react'
-import NewTodo from '../todos/NewTodo'
 import TodoContainer from '../todos/TodoContainer'
 
 const TodosPage = () => {

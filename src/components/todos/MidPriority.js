@@ -3,7 +3,7 @@ import Todo from './Todo';
 
 const MidPriority = ({data, getTodos}) => {
     const midPriority = data.filter((x) => x.priority === "Medium");
-    // console.log(midPriority)
+    // console.log(midPriority.map((x) => x._id))
     return (
         <div>
         {

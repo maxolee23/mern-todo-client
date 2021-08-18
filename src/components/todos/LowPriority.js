@@ -3,6 +3,8 @@ import Todo from './Todo'
 
 const LowPriority = ({data, getTodos}) => {
     const lowPriority = data.filter((x) => x.priority === "Low");
+    // console.log(lowPriority)
+
     return (
         // <h1>Hello</h1>
         <div>

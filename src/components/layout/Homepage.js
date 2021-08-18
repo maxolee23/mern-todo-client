@@ -6,6 +6,7 @@ import Register from '../auth/Register';
 import Login from '../auth/Login';
 
 import TodosPage from './TodosPage';
+import TodoDetails from '../../components/todos/TodoDetails';
 
 const Homepage = () => {
     const {loggedIn} = useContext(AuthContext)
