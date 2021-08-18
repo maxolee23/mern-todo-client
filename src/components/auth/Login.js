@@ -20,7 +20,7 @@ const Login = () => {
             await getLoggedIn();
             history.push("/")
         } catch (error) {
-            console.log(error)
+            alert(error.response.data.message)
         }
     }
     return (

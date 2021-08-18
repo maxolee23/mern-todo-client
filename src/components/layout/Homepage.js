@@ -12,21 +12,34 @@ const Homepage = () => {
     const {loggedIn} = useContext(AuthContext)
     return (
         <div>
-            {
-                !loggedIn && <h1>Homepage</h1>
-            }
+           
             
-            <Switch>
-                <Route exact path="/signup">
+            
+                {
+                    !loggedIn &&
+                    <div>
+                    <h1>Homepage</h1>
+                    <Switch>
+                    <Route exact path="/signup">
                     <Register />
-                </Route>
-                <Route exact path="/login">
+                    </Route>
+                    <Route exact path="/login">
                     <Login />
-                </Route>
-                <Route exact path="/">
+                    </Route>
+                    </Switch>
+                    </div>
+                }
+                
+                {
+                    loggedIn &&
+                    <Switch>
+                    <Route exact path="/">
                     <TodosPage/>
-                </Route>
-            </Switch>
+                    </Route>
+                    </Switch>
+                }
+                
+            
         </div>
     )
 }

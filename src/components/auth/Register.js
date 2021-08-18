@@ -20,10 +20,10 @@ const Register = () => {
         const data = {firstName, lastName, email, password, confirmPassword};
         try {
             await axios.post("http://localhost:4000/auth/register", data);
-            await getLoggedIn;
+            await getLoggedIn();
             history.push("/")
         } catch (error) {
-            console.log(error)
+            alert(error.response.data.message)
         }
         
     }
