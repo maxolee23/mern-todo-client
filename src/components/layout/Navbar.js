@@ -6,12 +6,14 @@ const Navbar = () => {
 
     const {loggedIn} = useContext(AuthContext)
     return (
-        <div>
-            Navbar
-            {
+                <div className="navbar">
+                    <h3>TodoList</h3>
+                    {
                 loggedIn && <LogoutBtn />
-            }
-        </div>
+                    }
+                </div>
+            
+        
     )
 }
 

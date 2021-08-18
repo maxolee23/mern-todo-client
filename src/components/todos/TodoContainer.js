@@ -34,7 +34,7 @@ const TodoContainer = () => {
                     !data || !data.length ? 
                     (
                         <div>
-                            <h1>no todos yet</h1>
+                            <h3>No todos yet: Create your first one today!</h3>
                         </div>
                     ) : (
                         <div>

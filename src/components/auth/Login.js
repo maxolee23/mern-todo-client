@@ -24,16 +24,21 @@ const Login = () => {
         }
     }
     return (
-        <div>
-            <h1>Log in</h1>
-            <form onSubmit={submit}>
-                <label>Email</label>
-                <input type="email" onChange={(e) => setEmail(e.target.value)}/>
+        <div className="auth-container-card">
+            <div className="auth-card-header">
+            <h1 className="auth-card-title">Log in</h1>
+            </div>
+            <form className="login-form" onSubmit={submit}>
 
-                <label>Password</label>
-                <input type="password" onChange={(e) => setPassword(e.target.value)}/>
+                <label className="login-label">Email</label>
+                <input className="login-input" type="email" onChange={(e) => setEmail(e.target.value)}/>
 
-                <button>Log in</button>
+                <label className="login-label">Password</label>
+                <input className="login-input" type="password" onChange={(e) => setPassword(e.target.value)}/>
+
+                <div className="btn-container">
+                <button className="login-submit">Log in</button>
+                </div>
                 <p>Don't have an account? Sign up <Link to="/signup">here</Link></p>
             </form>
         </div>

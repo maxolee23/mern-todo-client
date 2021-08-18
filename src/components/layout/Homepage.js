@@ -17,13 +17,17 @@ const Homepage = () => {
             
                 {
                     !loggedIn &&
-                    <div>
-                    <h1>Homepage</h1>
-                    <Switch>
+                    <div className="home-container">
+                        
+                        
+                        
+                    <Switch>  
                     <Route exact path="/signup">
+                    <h1 className="mantra">Create an account today, and start organizing your life</h1>
                     <Register />
                     </Route>
                     <Route exact path="/login">
+                    <h1 className="mantra">A personalized todo list, just for you.</h1>
                     <Login />
                     </Route>
                     </Switch>
