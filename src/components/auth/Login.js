@@ -24,7 +24,7 @@ const Login = () => {
         }
     }
     return (
-        <div className="auth-container-card">
+        <div className="login-container-card">
             <div className="auth-card-header">
             <h1 className="auth-card-title">Log in</h1>
             </div>
@@ -39,7 +39,7 @@ const Login = () => {
                 <div className="btn-container">
                 <button className="login-submit">Log in</button>
                 </div>
-                <p>Don't have an account? Sign up <Link to="/signup">here</Link></p>
+                <p className="login-toggle">Don't have an account? Sign up <Link to="/signup">here</Link></p>
             </form>
         </div>
     )

@@ -12,8 +12,10 @@ const Router = () => {
     // console.log(context)
     return (
         <BrowserRouter>
+        <div className="app">
             <Navbar />
             <Homepage />
+        </div>
             
         
         </BrowserRouter>
