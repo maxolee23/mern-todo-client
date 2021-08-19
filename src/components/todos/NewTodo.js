@@ -22,14 +22,17 @@ const NewTodo = ({getTodos}) => {
         }
     return (
         
-        <div>
-           <h3>Create a todo</h3>
-           <form onSubmit={submit}>
+        <div className="todo-create-container">
+           <h3 className="todo-create-title">Create a todo</h3>
+
+           <form className="todo-create-form" onSubmit={submit}>
+               <div className="todo-create-title">
                <label>Title</label>
                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
+               </div>
 
-                <div>
-                    <p>Priority: </p>
+                <div className="todo-create-priority">
+                    <label>Priority: </label>
                     <select onChange={(e) => setPriority(e.target.value)}>
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
@@ -37,7 +40,9 @@ const NewTodo = ({getTodos}) => {
                     </select>
                 </div>
 
-                <button type="submit">Create</button>
+                <div className="todo-create-btn-container">
+                <button className="todo-submit" type="submit">Create</button>
+                </div>
            </form>
         </div>
     )

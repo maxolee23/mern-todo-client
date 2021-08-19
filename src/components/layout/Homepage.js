@@ -23,11 +23,11 @@ const Homepage = () => {
                         
                     <Switch>  
                     <Route exact path="/signup">
-                    <h1 className="mantra">Create an account today, and start organizing your life</h1>
+                    <h1 className="mantra-register">Create an account today, and start organizing your life</h1>
                     <Register />
                     </Route>
                     <Route exact path="/login">
-                    <h1 className="mantra">A personalized todo list, just for you.</h1>
+                    <h1 className="mantra-login">A personalized todo list, just for you.</h1>
                     <Login />
                     </Route>
                     </Switch>

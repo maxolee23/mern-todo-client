@@ -23,30 +23,27 @@ const Todo = ({todo, getTodos}) => {
     
     return (
         <div>
-            <p>{todo.title}</p>
-            {todo.completed === true &&<p>Completed</p>}
-            {todo.completed === false && <p>Not Completed</p>}
+        <div className="single-todo-container">
+            <p className="single-todo-title">{todo.title}</p>
+            {todo.completed === true &&<p className="single-todo-complete">Completed</p>}
+            {todo.completed === false && <p className="single-todo-incomplete">Not Completed</p>}
 
             {/* <input type="checkbox" value={!todo.completed} onChange={(e) => setChecked(e.target.value)} /> */}
-            <button onClick={(e) => toggleShowEdit(!showEdit)}>Edit</button>
-            <button onClick={deleteBtn}>Delete</button>
-
-            <div>
-                {
-                    showEdit === true && 
-                    <TodoDetails 
-                    todo={todo} 
-                    getTodos={getTodos} 
-                    // completedArr={{
-                    //     "Completed": true,
-                    //     "Not Completed": false
-                    // } }
-                    priorityArr={["High", "Medium", "Low"]}
-                    />
-                }
-            </div>
+            <button className="single-todo-edit" onClick={(e) => toggleShowEdit(!showEdit)}>Edit</button>
+            <button className="single-todo-delete" onClick={deleteBtn}>Delete</button>
             
         </div>
+        <div>
+        {
+            showEdit === true && 
+            <TodoDetails 
+            todo={todo} 
+            getTodos={getTodos} 
+            priorityArr={["High", "Medium", "Low"]}
+            />
+        }
+    </div>
+    </div>
     )
 }
 

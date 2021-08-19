@@ -37,17 +37,17 @@ const Register = () => {
                 <div className="names-container">
                 <div className="names-label">
                 <label>First name</label>
-                <input  type="text" placeholder="first name" onChange={(e) => setFirstName(e.target.value)}/>
+                <input className="names-input"  type="text" placeholder="Ex. John" onChange={(e) => setFirstName(e.target.value)}/>
                 </div>
 
                 <div className="names-label">
                 <label>Last name</label>
-                <input type="text" placeholder="last name" onChange={(e) => setLastName(e.target.value)}/>
+                <input className="names-input" type="text" placeholder="Ex. Doe" onChange={(e) => setLastName(e.target.value)}/>
                 </div>
                 </div>
 
                 <label className="login-label">Email</label>
-                <input className="login-input" type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)}/>
+                <input className="login-input" type="email" placeholder="johndoe@gmail.com" onChange={(e) => setEmail(e.target.value)}/>
 
                 <label className="login-label" >Password</label>
                 <input className="login-input" type="password" onChange={(e) => setPassword(e.target.value)}/>

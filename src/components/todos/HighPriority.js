@@ -10,7 +10,7 @@ const HighPriority = ({data, getTodos}) => {
         <div>
         {
             highPriority.length ? (
-                <div>
+                <div className="priority-container">
                     <h2>High priority</h2>
                     {
                         highPriority.map((todo, key) => (

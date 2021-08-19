@@ -8,7 +8,7 @@ const MidPriority = ({data, getTodos}) => {
         <div>
         {
             midPriority.length ? (
-                <div>
+                <div className="priority-container">
                     <h2>Medium priority</h2>
                     {
                         midPriority.map((todo, key) => (

@@ -1,17 +1,42 @@
+html {
+    height: 100%;
+    max-height: 1200px;
+    width: 100%;
+}
+
 .app {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100%;
+    min-width: 100%;
+    max-height: 1200px;
 }
 
 /* navbar styling */
 
 .navbar {
     display: flex;
+    align-items: baseline;
     /* flex-direction: row; */
     justify-content: space-between;
     align-content: center;
     border-bottom: black solid 2px;
-    height: 10vh;
+    height: 10%;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+}
+
+.logo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    padding-left: 10px;
+    font-weight: 500;
 }
 
 .logout-btn {
@@ -28,13 +53,27 @@
 .home-container {
     display: flex;
     justify-content: space-between;
-    height: 90vh;
-    width: 100vw;
+    height: 100vh;
+    min-height: 90%;
+    max-height: fit-content;
+    width: 100%;
+    min-width: 100%;
+    max-width: fit-content;
     background-color: #83A4F9;
     position: relative;
 }
 
-.mantra {
+@media only screen and (max-width: 768px) {
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+}
+
+.mantra-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,9 +84,28 @@
 
 }
 
+.mantra-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 100;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .mantra-register {
+        padding-top: 30px;
+    }
+}
+
+
 /* login and signup cards */
+
+
 .auth-container-card {
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -60,7 +118,7 @@
     font-family: Montserrat, sans-serif;
 }
 .login-container-card {
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -71,6 +129,29 @@
     padding: 10px 10px 10px 10px;
     background-color: white;
     font-family: Montserrat, sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+    .login-container-card {
+        width: 60%;
+        height: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .auth-container-card {
+        width: 60%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .login-container-card {
+        width: 80%;
+    }
+    .auth-container-card {
+        width: 80%;
+    }
 }
 
 .auth-card-header{
@@ -100,6 +181,11 @@
 }
 .names-label {
     padding-right: 7px;
+}
+
+.names-input {
+    border-radius: 5px;
+    border: #e3e3e3 solid 1px;
 }
 
 
@@ -145,4 +231,150 @@
 .login-toggle {
     font-size: x-small;
     text-align: center;
+}
+
+
+/* todo page styling */
+
+.todo-body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #6d91ed;
+}
+
+.todo-create-container {
+    margin-top: 20px;
+    border: transparent solid 1px;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    background: whitesmoke;
+    font-family: Montserrat, sans-serif;
+}
+
+.todo-create-title {
+    font-weight: 300;
+}
+
+.todo-create-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-create-priority {
+    font-weight: 300;
+    padding-top: 10px;
+}
+
+.todo-create-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.todo-submit {
+    /* height: 5vh; */
+    width: 10%;
+    background-color: #255be6;
+    border-radius: 10px;
+    border-color: transparent;
+    color: white;
+}
+
+
+
+/* todos container */
+
+.todos-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.priority-container {
+    flex-grow: 2;
+    margin-top: 20px;
+    border: transparent solid 1px;
+    border-radius: 5px;
+    width: 30vw;
+    text-align: center;
+    background: whitesmoke;
+    font-family: Montserrat, sans-serif;
+    margin-left: 20px;
+}
+
+.single-todo-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.single-todo-title {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.single-todo-complete {
+    font-size: x-small;
+    flex-grow: 1;
+    color: gray;
+}
+
+.single-todo-incomplete {
+    font-size: x-small;
+    flex-grow: 1;
+}
+
+.single-todo-edit {
+    flex-grow: 1;
+    /* width: 10%; */
+    height: 15px;
+    background-color: #255be6;
+    border-radius: 10px;
+    border-color: transparent;
+    color: white;
+}
+
+.single-todo-delete {
+    flex-grow: 1;
+    width: 15%;
+    height: 15px;
+    background-color: #ff0000;
+    border-radius: 10px;
+    border-color: transparent;
+    color: black;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.edit-modal-form {
+    /* display: flex; */
+    justify-content: space-between;
+
+}
+
+.edit-inputs {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.edit-modal-title {
+    width: 30%
+}
+
+.save-changes {
+    height: 5%;
+    width: 15%;
+    background-color: #6d91ed;
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    margin-top: 5px;
 }

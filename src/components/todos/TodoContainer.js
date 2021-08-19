@@ -28,7 +28,7 @@ const TodoContainer = () => {
 
  
     return (
-        <div>
+        <div className="todo-body">
             <NewTodo getTodos={getTodos}/>
                 {
                     !data || !data.length ? 
@@ -37,7 +37,7 @@ const TodoContainer = () => {
                             <h3>No todos yet: Create your first one today!</h3>
                         </div>
                     ) : (
-                        <div>
+                        <div className="todos-container">
                         {/* <HighPriority data={todos.filter((x) => x.priority === "High")} getTodos={getTodos}/>
                         <MidPriority data={todos.filter((x) => x.priority === "Medium")} getTodos={getTodos}/>
                         <LowPriority data={todos.filter((x) => x.priority === "Low")} getTodos={getTodos}/> */}

@@ -45,9 +45,10 @@ const TodoDetails = ({todo, getTodos, priorityArr}) => {
     console.log(todoPriority)
 
     return (
-        <div>
-                <form>
-                    <input value={todoTitle} onChange={(e) => setTodoTitle(e.target.value)} />
+        <div className="edit-modal">
+                <form className="edit-modal-form">
+                    <div className="edit-inputs">
+                    <input className="edit-modal-title" value={todoTitle} onChange={(e) => setTodoTitle(e.target.value)} />
 
                             {  todoComplete === true ? 
                             (
@@ -89,8 +90,8 @@ const TodoDetails = ({todo, getTodos, priorityArr}) => {
                                     </select>
                                 )
                             }
-
-                        <button onClick={editBtn}>Save Changes</button> 
+</div>
+                        <button className="save-changes" onClick={editBtn}>Save</button> 
              
                 </form>
                 </div>
